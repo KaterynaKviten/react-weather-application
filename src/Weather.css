@@ -1,0 +1,19 @@
+.Weather {
+  border: 1px solid #dadde1;
+  color: #a29e9e;
+  padding: 16px;
+}
+.Weather li {
+  list-style: none;
+}
+h2 {
+  color: black;
+  text-align: center;
+}
+h3 {
+  text-align: center;
+}
+#temperature {
+  color: black;
+  font-size: 60px;
+}
