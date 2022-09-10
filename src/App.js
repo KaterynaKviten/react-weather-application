@@ -7,7 +7,13 @@ export default function App() {
       <div className="container">
         <Weather defaultCity="Kyiv" />
 
-        <footer>Coded by Kateryna Shiurkova</footer>
+        <footer>
+          Coded by Kateryna Shiurkova and is
+          <a href="https://github.com/KaterynaKviten" target="blank">
+            {" "}
+            open-sourced on GitHub
+          </a>
+        </footer>
       </div>
     </div>
   );

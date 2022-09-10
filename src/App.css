@@ -2,3 +2,10 @@
   margin: 30px auto;
   max-width: 600px;
 }
+footer a {
+  text-decoration: none;
+  color: #e9c2d7;
+}
+footer a:hover {
+  color: #a29e9e;
+}

@@ -46,35 +46,36 @@ export default function Weather(props) {
                 type="search"
                 placeholder="Enter a city"
                 className="form-control"
-                autoFocus="on"
                 onChange={handleCityChange}
               />
             </div>
             <div className="col-3">
-              <input type="submit" value="Search" className="btn btn-primary" />
+              <input type="submit" value="Search" className="btn" />
             </div>
           </div>
         </form>
-        <h2 className="location">
-          {weatherData.city},{weatherData.country}
-        </h2>
-        <h3>
-          <FormatDate date={weatherData.date} />
-        </h3>
+
         <div className="row">
           <div className="col-4">
-            <div className="float-left">
-              <Icon code={props.data.icon} alt={props.data.description} />
+            <div>
+              <Icon code={weatherData.icon} alt={weatherData.description} />
             </div>
           </div>
+
           <div className="col-4" id="temperature">
+            <h2 className="location">
+              {weatherData.city},{weatherData.country}
+            </h2>
+            <h3>
+              <FormatDate date={weatherData.date} />
+            </h3>
             {Math.round(weatherData.temperature)}°C
           </div>
-          <div className="col-4">
+          <div className="col-4" id="descrip">
             <ul>
-              <li>Humidity:{weatherData.humidity} %</li>
-              <li>Description:{weatherData.description}</li>
-              <li>Wind:{weatherData.wind}km/h</li>
+              <li>Humidity: {weatherData.humidity} %</li>
+              <li>Description: {weatherData.description}</li>
+              <li>Wind: {Math.round(weatherData.wind)}km/h</li>
             </ul>
           </div>
         </div>
