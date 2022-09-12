@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import "./Weather.css";
 import FormatDate from "./FormatDate";
+import WeatherForecast from "./WeatherForecast";
 import Icon from "./Icon";
 
 export default function Weather(props) {
@@ -54,11 +55,15 @@ export default function Weather(props) {
             </div>
           </div>
         </form>
-
         <div className="row">
           <div className="col-4">
             <div>
-              <Icon code={weatherData.icon} alt={weatherData.description} />
+              <Icon
+                code={weatherData.icon}
+                alt={weatherData.description}
+                size={130}
+                color={"#e9c2d7"}
+              />
             </div>
           </div>
 
@@ -79,6 +84,7 @@ export default function Weather(props) {
             </ul>
           </div>
         </div>
+        <WeatherForecast />
       </div>
     );
   } else {
