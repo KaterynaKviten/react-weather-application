@@ -3,10 +3,12 @@
   border-radius: 10px;
   color: #727070;
   padding: 16px;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .Weather li {
   list-style: none;
+  font-size: 16px;
 }
 .Weather .btn {
   padding: 6px;
@@ -21,10 +23,12 @@ h2 {
 }
 h3 {
   font-size: 16px;
+  color: #727070;
+  font-weight: 100;
 }
 #temperature {
   color: rgb(55, 55, 55);
-  font-size: 60px;
+  font-size: 50px;
 }
 .Weather .row {
   padding-top: 25px;

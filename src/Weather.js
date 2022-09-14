@@ -8,9 +8,11 @@ import Icon from "./Icon";
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
   const [city, setCity] = useState(props.defaultCity);
+
   function handleResponse(response) {
     setWeatherData({
       ready: true,
+      coordinates: response.data.coord,
       temperature: response.data.main.temp,
       date: new Date(response.data.dt * 1000),
       city: response.data.name,
@@ -69,7 +71,7 @@ export default function Weather(props) {
 
           <div className="col-4" id="temperature">
             <h2 className="location">
-              {weatherData.city},{weatherData.country}
+              {weatherData.city}, {weatherData.country}
             </h2>
             <h3>
               <FormatDate date={weatherData.date} />
@@ -78,13 +80,12 @@ export default function Weather(props) {
           </div>
           <div className="col-4" id="descrip">
             <ul>
-              <li>Humidity: {weatherData.humidity} %</li>
-              <li>Description: {weatherData.description}</li>
-              <li>Wind: {Math.round(weatherData.wind)}km/h</li>
+              <li>Humidity: {weatherData.humidity}%</li>
+              <li>Wind: {Math.round(weatherData.wind)} km/h</li>
             </ul>
           </div>
         </div>
-        <WeatherForecast />
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
     );
   } else {
